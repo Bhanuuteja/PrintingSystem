@@ -1,0 +1,6 @@
+{
+  "name": "Meena Store Print Service",
+  "description": "A web application for users to upload documents, calculate printing costs, simulate payment, and print their documents. It includes a basic queueing mechanism to simulate single-user printer access.",
+  "requestFramePermissions": [],
+  "prompt": ""
+}
