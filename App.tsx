@@ -1,12 +1,12 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { AppStep, PrintJob } from './types';
-import { PRICE_PER_PAGE, DEFAULT_COPIES, DEFAULT_ORIENTATION, DEFAULT_COLOR_MODE, DEFAULT_DUPLEX_MODE, LOCAL_STORAGE_PRINTER_BUSY_KEY, PRINTER_BUSY_DURATION_MS } from './constants';
-import FileUpload from './components/FileUpload';
-import FileDetailsView from './components/FileDetailsView';
-import PaymentView from './components/PaymentView';
-import PrintView from './components/PrintView';
-import Spinner from './components/Spinner';
-import { PrinterIcon, AlertTriangleIcon, CheckCircleIcon, UploadCloudIcon, RefreshCwIcon } from './components/Icons';
+import { AppStep, PrintJob } from './types.ts';
+import { PRICE_PER_PAGE, DEFAULT_COPIES, DEFAULT_ORIENTATION, DEFAULT_COLOR_MODE, DEFAULT_DUPLEX_MODE, LOCAL_STORAGE_PRINTER_BUSY_KEY, PRINTER_BUSY_DURATION_MS } from './constants.ts';
+import FileUpload from './components/FileUpload.tsx';
+import FileDetailsView from './components/FileDetailsView.tsx';
+import PaymentView from './components/PaymentView.tsx';
+import PrintView from './components/PrintView.tsx';
+import Spinner from './components/Spinner.tsx';
+import { PrinterIcon, AlertTriangleIcon, CheckCircleIcon, UploadCloudIcon, RefreshCwIcon } from './components/Icons.tsx';
 
 const App: React.FC = () => {
   const [currentStep, setCurrentStep] = useState<AppStep>(AppStep.INITIAL_CHECK);
