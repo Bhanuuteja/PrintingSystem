@@ -2,31 +2,27 @@
   "version": 2,
   "headers": [
     {
-      "source": "/index\\.tsx",
+      "source": "/index.tsx",
       "headers": [
-        { "key": "Content-Type", "value": "text/javascript; charset=utf-8" },
-        { "key": "X-Vercel-Debug-Path", "value": "Matched-Regex-/index.tsx" }
+        { "key": "Content-Type", "value": "application/javascript; charset=utf-8" },
+        { "key": "Cache-Control", "value": "no-store, max-age=0, must-revalidate" },
+        { "key": "X-Vercel-Debug-Rule", "value": "Applied-Rule-Index-TSX" }
       ]
     },
     {
-      "source": "/components/(.+\\.tsx)",
+      "source": "/(.*\\.tsx)",
       "headers": [
-        { "key": "Content-Type", "value": "text/javascript; charset=utf-8" },
-        { "key": "X-Vercel-Debug-Path", "value": "Matched-Regex-/components/xxx.tsx" }
+        { "key": "Content-Type", "value": "application/javascript; charset=utf-8" },
+        { "key": "Cache-Control", "value": "no-store, max-age=0, must-revalidate" },
+        { "key": "X-Vercel-Debug-Rule", "value": "Applied-Rule-Any-TSX" }
       ]
     },
     {
-      "source": "/services/(.+\\.ts)",
+      "source": "/(.*\\.ts)",
       "headers": [
-        { "key": "Content-Type", "value": "text/javascript; charset=utf-8" },
-        { "key": "X-Vercel-Debug-Path", "value": "Matched-Regex-/services/xxx.ts" }
-      ]
-    },
-    {
-      "source": "/([^/]+\\.ts)", 
-      "headers": [
-        { "key": "Content-Type", "value": "text/javascript; charset=utf-8" },
-        { "key": "X-Vercel-Debug-Path", "value": "Matched-Regex-TopLevel.ts" }
+        { "key": "Content-Type", "value": "application/javascript; charset=utf-8" },
+        { "key": "Cache-Control", "value": "no-store, max-age=0, must-revalidate" },
+        { "key": "X-Vercel-Debug-Rule", "value": "Applied-Rule-Any-TS" }
       ]
     }
   ],
