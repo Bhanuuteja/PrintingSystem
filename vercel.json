@@ -1,22 +1,32 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "**/*",
-      "use": "@vercel/static"
-    }
-  ],
   "headers": [
     {
-      "source": "/(.*)\\.tsx$",
+      "source": "/index\\.tsx",
       "headers": [
-        { "key": "Content-Type", "value": "application/javascript; charset=utf-8" }
+        { "key": "Content-Type", "value": "text/javascript; charset=utf-8" },
+        { "key": "X-Vercel-Debug-Path", "value": "Matched-Regex-/index.tsx" }
       ]
     },
     {
-      "source": "/(.*)\\.ts$",
+      "source": "/components/(.+\\.tsx)",
       "headers": [
-        { "key": "Content-Type", "value": "application/javascript; charset=utf-8" }
+        { "key": "Content-Type", "value": "text/javascript; charset=utf-8" },
+        { "key": "X-Vercel-Debug-Path", "value": "Matched-Regex-/components/xxx.tsx" }
+      ]
+    },
+    {
+      "source": "/services/(.+\\.ts)",
+      "headers": [
+        { "key": "Content-Type", "value": "text/javascript; charset=utf-8" },
+        { "key": "X-Vercel-Debug-Path", "value": "Matched-Regex-/services/xxx.ts" }
+      ]
+    },
+    {
+      "source": "/([^/]+\\.ts)", 
+      "headers": [
+        { "key": "Content-Type", "value": "text/javascript; charset=utf-8" },
+        { "key": "X-Vercel-Debug-Path", "value": "Matched-Regex-TopLevel.ts" }
       ]
     }
   ],
