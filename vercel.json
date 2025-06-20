@@ -1,28 +1,40 @@
 {
   "version": 2,
+  "builds": [
+    {
+      "src": "**/*",
+      "use": "@vercel/static"
+    }
+  ],
   "headers": [
     {
       "source": "/index.tsx",
       "headers": [
         { "key": "Content-Type", "value": "application/javascript; charset=utf-8" },
-        { "key": "Cache-Control", "value": "no-store, max-age=0, must-revalidate" },
-        { "key": "X-Vercel-Debug-Rule", "value": "Applied-Rule-Index-TSX" }
+        { "key": "Cache-Control", "value": "no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0" },
+        { "key": "Pragma", "value": "no-cache" },
+        { "key": "Expires", "value": "0" },
+        { "key": "X-Vercel-Debug-Rule", "value": "Rule-Index-TSX-Specific" }
       ]
     },
     {
       "source": "/(.*\\.tsx)",
       "headers": [
         { "key": "Content-Type", "value": "application/javascript; charset=utf-8" },
-        { "key": "Cache-Control", "value": "no-store, max-age=0, must-revalidate" },
-        { "key": "X-Vercel-Debug-Rule", "value": "Applied-Rule-Any-TSX" }
+        { "key": "Cache-Control", "value": "no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0" },
+        { "key": "Pragma", "value": "no-cache" },
+        { "key": "Expires", "value": "0" },
+        { "key": "X-Vercel-Debug-Rule", "value": "Rule-Any-TSX-Regex" }
       ]
     },
     {
       "source": "/(.*\\.ts)",
       "headers": [
         { "key": "Content-Type", "value": "application/javascript; charset=utf-8" },
-        { "key": "Cache-Control", "value": "no-store, max-age=0, must-revalidate" },
-        { "key": "X-Vercel-Debug-Rule", "value": "Applied-Rule-Any-TS" }
+        { "key": "Cache-Control", "value": "no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0" },
+        { "key": "Pragma", "value": "no-cache" },
+        { "key": "Expires", "value": "0" },
+        { "key": "X-Vercel-Debug-Rule", "value": "Rule-Any-TS-Regex" }
       ]
     }
   ],
